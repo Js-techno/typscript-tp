@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+    <link href="./dist/output.css" rel="stylesheet"> <!-- Compiled Tailwind CSS -->
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-6">Book Tracker</h1>
+        
+        <!-- Book Registration Form -->
+        <form id="bookForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+                <input id="title" type="text" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+            </div>
+            <div class="mb-4">
+                <label for="author" class="block text-gray-700 text-sm font-bold mb-2">Author</label>
+                <input id="author" type="text" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+            </div>
+            <div class="mb-4">
+                <label for="pages" class="block text-gray-700 text-sm font-bold mb-2">Number of Pages</label>
+                <input id="pages" type="number" min="1" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+            </div>
+            <div class="mb-4">
+                <label for="pagesRead" class="block text-gray-700 text-sm font-bold mb-2">Pages Read</label>
+                <input id="pagesRead" type="number" min="0" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+            </div>
+            <div class="mb-4">
+                <label for="status" class="block text-gray-700 text-sm font-bold mb-2">Status</label>
+                <select id="status" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+                    <option>Read</option>
+                    <option>Re-read</option>
+                    <option>DNF</option>
+                    <option>Currently reading</option>
+                    <option>Returned Unread</option>
+                    <option>Want to read</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="format" class="block text-gray-700 text-sm font-bold mb-2">Format</label>
+                <select id="format" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+                    <option>Print</option>
+                    <option>PDF</option>
+                    <option>Ebook</option>
+                    <option>AudioBook</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Price</label>
+                <input id="price" type="number" min="0" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+            </div>
+            <div class="mb-4">
+                <label for="suggestedBy" class="block text-gray-700 text-sm font-bold mb-2">Suggested By</label>
+                <input id="suggestedBy" type="text" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700">
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Add Book
+            </button>
+        </form>
+
+        <!-- Display Books -->
+        <div id="bookList" class="mt-8"></div>
+
+        <!-- Global Stats -->
+        <div id="globalStats" class="mt-8 p-4 bg-white shadow-md rounded">
+            <h2 class="text-xl font-bold">Global Stats</h2>
+            <p id="totalBooks">Total Books Read: 0</p>
+            <p id="totalPages">Total Pages Read: 0</p>
+        </div>
+    </div>
+
+    <script type="module" src="./dist/app.js"></script>
+</body>
+</html>
